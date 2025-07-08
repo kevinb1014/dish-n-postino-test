@@ -3,7 +3,7 @@ services:
     name: postino-scraper
     schedule: "0 0 1 * *"  # At midnight on the 1st day of every month (UTC)
     runtime: python
-    buildCommand: pip install -r requirements.txt && playwright install --with-deps
+    buildCommand: pip install -r requirements.txt && playwright install chromium
     startCommand: python scrape_postino.py
     envVars:
       - key: SUPABASE_URL
